@@ -1,0 +1,84 @@
+﻿@*@{
+        ViewData["Title"] = "Get";
+    }
+
+    <h1>Get</h1>*@
+@model IEnumerable<EmployeeManagementSystem.Models.User>
+
+@{
+    ViewData["Title"] = "Get";
+}
+
+<div style="position: absolute; top: 0; right: 0; width: 180px; text-align:right;">
+    <button><h3><a class="nav-link text-dark btn-primary font-weight-bold" style="position: relative; margin: 10px; background-color: #FFFFFF; float: left" asp-area="" asp-controller="Account" asp-action="SignOut">User SignOut</a></h3></button>
+</div>
+<br />
+
+<div class="col-6">
+    <h2 class="text-primary">User List</h2>
+</div>
+<div class="container">
+    <div class="btn-group">
+        </h3><button type="button" class="nav-link text-dark btn-primary font-weight-bold" style="margin: 1px; background-color: #00b9ff;float: initial" asp-area="" asp-controller="Users" asp- asp-action="Get">User</button></h3>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <a class="nav-link text-dark btn-primary font-weight-bold" style="background-color: #FFFFFF;float: left" asp-area="" asp-controller="Employees" asp- asp-action="Get">Employee</a>
+            <a class="nav-link text-dark btn-primary font-weight-bold" style="background-color: #FFFFFF;float: left" asp-area="" asp-controller="Projects" asp- asp-action="Get"> Project</a>
+            <a class="nav-link text-dark btn-primary font-weight-bold" style="background-color: #FFFFFF;float: left" asp-area="" asp-controller="Departments" asp- asp-action="Get"> Department</a>
+            <a class="nav-link text-dark btn-primary font-weight-bold" style="background-color: #FFFFFF;float: left" asp-area="" asp-controller="Users" asp- asp-action="Get"> Companies</a>
+        </ul>
+    </div>
+</div>
+
+<div class="container p-3">
+    <div class="row pt-10">
+        @*<div class="col-6">
+                <h4>Employee List</h4>
+            </div >*@
+        <div class="col-12">
+            <a class="nav-link text-dark btn-primary font-weight-bold" style="margin: 10px; background-color: #00b9ff;float: right" asp-area="" asp-controller="Users" asp- asp-action="Create">Create New Users</a>
+        </div>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        UserName
+                    </th>
+                    <th>
+                        Password
+                    </th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td width="10%">@obj.Id</td>
+                        <td width="30%">@obj.UserName</td>
+                        <td width="20%">@obj.Password</td>
+
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Users" asp-route-Id="@obj.Id" asp-action="update" class="btn btn-primary mx-1">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <a asp-controller="Users" asp-route-Id="@obj.Id" asp-action="Delete" class="btn btn-danger mx-3">
+                                    <i class="far fa-trash-alt"></i> Delete
+                                </a>
+                            </div>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,99 @@
+﻿@*@{
+        ViewData["Title"] = "Delete";
+    }
+
+    <h1>Delete</h1>*@
+
+@model EmployeeManagementSystem.Models.Project
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post" asp-controller="Project" asp-action="Delete">
+    @* <input asp-for="CompanyId" hidden />*@
+    <div class="border p-3">
+        <div class="form-group row">
+            <h1 class="text-info p1-3">Delete Project</h1>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ProjectId"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="ProjectId" class="form-control" />
+                        <span asp-validation-for="ProjectId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ProjectName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="ProjectName" class="form-control" />
+                        <span asp-validation-for="ProjectName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ProjectLocation"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="ProjectLocation" class="form-control" />
+                        <span asp-validation-for="ProjectLocation" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ProjectDescription"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="ProjectDescription" class="form-control" />
+                        <span asp-validation-for="ProjectDescription" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="StartDate"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="StartDate" class="form-control" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="EndDate"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="EndDate" class="form-control" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @*<div class="col-6 offset-4 row">*@
+                    <div class="col-4 offset-4">
+                        <input type="submit" class="btn btn-info w-100" value="Delete" />
+                    </div>
+                    <div class="col">
+                        @if (ViewBag.Message != null)
+                        {
+                            @*<a class="nav-link text-dark btn-primary font-weight-bold" style="margin: 10px; background-color: #ffdd0f;top: 2px " asp-area="" asp-controller="Admin" asp- asp-action="Get">Get Employees</a>*@
+                            <a class="nav-link text-dark btn-primary font-weight-bold" style="position: relative; margin: 10px; background-color: #ff8d00;float: right" asp-area="" asp-controller="Projects" asp- asp-action="Get">Get Project</a>
+                            <script type="text/javascript">
+                                                    window.onload = function () {
+                                                    alert("@ViewBag.Message");
+                                                    };
+                            </script>
+                        }
+                    </div>
+                    @*</div>*@
+                </div>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </div>
+</form>
+

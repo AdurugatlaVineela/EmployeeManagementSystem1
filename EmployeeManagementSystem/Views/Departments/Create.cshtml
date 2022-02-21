@@ -1,0 +1,65 @@
+﻿@*@{
+        ViewData["Title"] = "Create";
+    }
+
+    <h1>Create</h1>*@
+@model EmployeeManagementSystem.Models.Department
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" asp-controller="Departments" asp-action="Create">
+    <input asp-for="DepartmentId" hidden />
+    <div class="border p-3">
+        <div class="form-group row">
+            <h1 class="text-info p1-3">Create Department</h1>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for=" DepartmentName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="DepartmentName" class="form-control" />
+                        <span asp-validation-for="DepartmentName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="DepartmentLocation"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="DepartmentLocation" class="form-control" />
+                        <span asp-validation-for="DepartmentLocation" class="text-danger"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    @*<div class="col-6 offset-4 row">*@
+                    <div class="col-4 offset-4">
+                        <input type="submit" class="btn btn-info w-100" value="Create" />
+                    </div>
+                    @*<div class="col">
+                            @if (ViewBag.Message != null)
+                            {
+                                //<a class="nav-link text-dark btn-primary font-weight-bold" style="margin: 10px; background-color: #ffdd0f;top: 2px " asp-area="" asp-controller="Admin" asp- asp-action="Get">Get All Products</a>
+                                <a class="nav-link text-dark btn-primary font-weight-bold" style="position: relative; margin: 10px; background-color: #ff8d00;float: right" asp-area="" asp-controller="Admin" asp- asp-action="Get">Get All Products</a>
+                                <script type="text/javascript">
+                                                    window.onload = function () {
+                                                    alert("@ViewBag.Message");
+                                                    };
+                                </script>
+                            }
+                        </div>*@
+                    @*</div>*@
+                </div>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </div>
+</form>
+
+

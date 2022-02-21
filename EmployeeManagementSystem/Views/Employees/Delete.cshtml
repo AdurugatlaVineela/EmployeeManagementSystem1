@@ -1,0 +1,156 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<form method="post" asp-controller="Employees" asp-action="Delete">
+    @*<input asp-for="EmployeeId" hidden />*@
+    <div class="border p-3">
+        <div class="form-group row">
+            <h1 class="text-info p1-3">Delete Employee</h1>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="EmployeeId"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="FirstName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="LastName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="BirthDate"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="BirthDate" class="form-control" />
+                        <span asp-validation-for="BirthDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="HireDate"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="HireDate" class="form-control" />
+                        <span asp-validation-for="HireDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Address"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="City"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Region"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Region" class="form-control" />
+                        <span asp-validation-for="Region" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="PostalCode"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="PostalCode" class="form-control" />
+                        <span asp-validation-for="PostalCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Country"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Country" class="form-control" />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="HomePhone"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="HomePhone" class="form-control" />
+                        <span asp-validation-for="HomePhone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="DepartmentId"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="DepartmentId" class="form-control" />
+                        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ProjectId"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="ProjectId" class="form-control" />
+                        <span asp-validation-for="ProjectId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @*<div class="col-6 offset-4 row">*@
+                    <div class="col-4 offset-4">
+                        <input type="submit" class="btn btn-info w-100" value="Delete" />
+                    </div>
+                    <div class="col">
+                        @if (ViewBag.Message != null)
+                            {
+                        @*<a class="nav-link text-dark btn-primary font-weight-bold" style="margin: 10px; background-color: #ffdd0f;top: 2px " asp-area="" asp-controller="Admin" asp- asp-action="Get">Get Employees</a>*@
+                        <a class="nav-link text-dark btn-primary font-weight-bold" style="position: relative; margin: 10px; background-color: #ff8d00;float: right" asp-area="" asp-controller="Employees" asp- asp-action="Get">Get Employees</a>
+                        <script type="text/javascript">
+                                                    window.onload = function () {
+                                                    alert("@ViewBag.Message");
+                                                    };
+                        </script>
+                            }
+                    </div>
+                    @*</div>*@
+                </div>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </div>
+</form>

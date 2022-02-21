@@ -1,0 +1,44 @@
+﻿@*@{
+        ViewData["Title"] = "SignOut";
+    }
+
+    <h1>SignOut</h1>*@
+@model EmployeeManagementSystem.Models.User
+
+@{
+    ViewData["Title"] = "SignOut";
+}
+
+<form method="post" asp-controller="Account" asp-action="SigOut">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h1 class="text-info p1-3">SignOut</h1>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="UserName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Password"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-4 offset-4">
+                    <input type="submit" class="btn btn-info w-100" value="Login" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
